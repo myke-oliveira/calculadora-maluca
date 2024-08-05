@@ -10,8 +10,6 @@ def test_calculate():
     mock_request = MockRequest(body={ "number": 1 })
     calculator1 = Calculator1()
     response = calculator1.calculate(mock_request)
-    print()
-    print(f"{response=}")
     
     # formato da resposta
     assert "data" in response
@@ -29,5 +27,4 @@ def test_calculator_with_body_error():
     with raises(Exception) as excinfo:
         response = calculator1.calculate(mock_request)
     
-    print(f"{excinfo}")
     assert str(excinfo.value) == "Body mal formatado."
